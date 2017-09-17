@@ -3,7 +3,8 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override"),
     router          = require('./router'),
-    config          = require('./config').conf;
+    config          = require('./configs/config').conf,
+    morgan          = require("morgan");
 
 // Middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -11,6 +12,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(require('express-promise')());
 
+app.use(morgan('dev'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -21,6 +23,7 @@ app.use(function(req, res, next) {
 });
 
 router.setup(app);
+
 
 // Start server
 app.listen(config.port, function() {

@@ -1,5 +1,8 @@
 var express         = require("express");
 var pjson           = require('./package.json');
+var passport 		= require("passport");
+var jwt				= require("jsonwebtoken");
+var authentication   = require('./controllers/authentication');
 
 /**
  *  Sets up the routes.
@@ -11,6 +14,16 @@ module.exports.setup = function (app) {
     var api = express.Router();
 
     api.route('/').get( function(req, res){res.status(200).jsonp("Neu Backend API :  versión "+pjson.version);});
-    app.use('/api', api);
+
+
+ 	api.route('/signup').post(authentication.signUp);
+
+ 	api.route('/login').post(authentication.logIn);
+
+     app.use('/api', api);
 
 };
+
+
+
+
