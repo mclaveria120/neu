@@ -1,8 +1,9 @@
-var express         = require("express");
-var pjson           = require('./package.json');
-var passport 		= require("passport");
-var jwt				= require("jsonwebtoken");
-var authentication   = require('./controllers/authentication');
+var express           = require("express");
+var pjson             = require('./package.json');
+var passport 		  = require("passport");
+var jwt				  = require("jsonwebtoken");
+var authController    = require('./controllers/authcontroller');
+var counterController = require('./controllers/countercontroller');
 
 /**
  *  Sets up the routes.
@@ -16,11 +17,15 @@ module.exports.setup = function (app) {
     api.route('/').get( function(req, res){res.status(200).jsonp("Neu Backend API :  versión "+pjson.version);});
 
 
- 	api.route('/signup').post(authentication.signUp);
+ 	api.route('/signup').post(authController.signUp);
 
- 	api.route('/login').post(authentication.logIn);
+ 	api.route('/login').post(authController.logIn);
 
-     app.use('/api', api);
+ 	api.route('/count')
+ 					  .post(counterController.increaseCounter)
+					  .get(counterController.getTotalCounters);
+	
+	app.use('/api', api);
 
 };
 
