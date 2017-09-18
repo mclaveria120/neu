@@ -1,0 +1,91 @@
+{
+	"variables": [],
+	"info": {
+		"name": "neurala",
+		"_postman_id": "84ab267c-97c3-8a9f-c9de-f255b58e58a5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"url": "localhost:3000/api/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"email\": \"ggpy@v.com\",\n  \"password\": \"v\"\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"url": "localhost:3000/api/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"email\": \"ggpy@v.com\",\n  \"password\": \"v\"\n  }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "count",
+			"request": {
+				"url": "localhost:3000/api/count",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n  \"email\": \"ggpy@v.com\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "count",
+			"request": {
+				"url": "localhost:3000/api/count",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6InlAay5jb20iLCJwYXNzd29yZCI6ImsiLCJpYXQiOjE1MDU2OTI3MDIsImV4cCI6MTUwNTcwMjc4Mn0.ElqUnnXGCiS8k-xU7FknU0j33QmqeoCGMEHvl9AmPqw",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

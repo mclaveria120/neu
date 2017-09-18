@@ -1,10 +1,8 @@
 var counterServices  = require('../services/counterservice');
 
-
-
 exports.increaseCounter = function(req, res) {
-
-		counterServices.increaseCounter(req.body.email, function(err) {
+	console.log(req.user.email);
+ 	counterServices.increaseCounter(req.user.email, function(err) {
 			    if (err) {
 			    	res.status(500).jsonp({ 'error': true, 'message': 'Error increasing counter.. !' });
 			    } else {
@@ -13,10 +11,7 @@ exports.increaseCounter = function(req, res) {
 			 });
 };
 
-
-
 exports.getTotalCounters = function(req, res) {
-	
 		counterServices.getTotalNumberOfCounters(function(err, answer) {
 			    if (err) {
 			    	res.status(500).jsonp({ 'error': true, 'message': 'Error getting counters .. !' });

@@ -4,6 +4,9 @@ var passport 		  = require("passport");
 var jwt				  = require("jsonwebtoken");
 var authController    = require('./controllers/authcontroller');
 var counterController = require('./controllers/countercontroller');
+var jwt 		      = require('jsonwebtoken');
+var passport = require('passport');
+
 
 /**
  *  Sets up the routes.
@@ -16,18 +19,23 @@ module.exports.setup = function (app) {
 
     api.route('/').get( function(req, res){res.status(200).jsonp("Neu Backend API :  versión "+pjson.version);});
 
-
- 	api.route('/signup').post(authController.signUp);
+	api.route('/signup').post(authController.signUp);
 
  	api.route('/login').post(authController.logIn);
 
+	require('./configs/passport')(passport);
+ 	
+ 
  	api.route('/count')
- 					  .post(counterController.increaseCounter)
-					  .get(counterController.getTotalCounters);
-	
+ 					  .post(passport.authenticate('jwt', { session: false }),counterController.increaseCounter)
+					  .get(passport.authenticate('jwt', { session: false }),counterController.getTotalCounters);
+
 	app.use('/api', api);
+	
 
 };
+
+
 
 
 
