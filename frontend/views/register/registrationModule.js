@@ -1,6 +1,6 @@
 
 var registrationModule = angular.module("registrationModule", []);
-registrationModule.controller('registrationController', function($location, $scope, $rootScope,registrationService) {
+registrationModule.controller('registrationController', function($location, $scope, $rootScope,registrationService,utilService) {
 	$rootScope.messageError=false;
 	
 	var regCtrl = this;
@@ -16,12 +16,12 @@ registrationModule.controller('registrationController', function($location, $sco
 	}
 
 	var onSuccess = function(data, headers) { 
-		console.log('user register')
+		utilService.showModal("You have been registered");
 		$location.path('#/');
 	};
 
 	var onError = function(data, headers) {
-		console.log(data);
+		utilService.showModal(data.message);
 	};
 	
 	regCtrl.register = function() {

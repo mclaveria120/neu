@@ -22,8 +22,8 @@
 		<div class="container-fluid">
 			<div id="guest">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#login"></i>Login</a></li>
-					<li><a href="#registration">Register</a></li>
+					<li><a href="#login" ng-if="getPath()!='/login'"></i>Login</a></li>
+					<li><a href="#registration" ng-if="getPath()!='/registration'">Register</a></li>
 				</ul>
 			</div>
 			<div id="logout">
@@ -33,7 +33,10 @@
 			</div>
 		</div>
 	</nav>
-
+	<div  align="center"  ng-show="messageError" class="alert alert-danger">{{message}}</div>
+	
+	
+ 
 	
 	<div class="jumbotron">
 		<div class="container-fluid">
@@ -48,7 +51,11 @@
 	<script type="text/javascript" src="conf/app-router.js"></script><!--Navigation and APP LEVEL config Module -->
 	<script type="text/javascript" src="conf/app-const.js"></script><!--Application Const. -->
 	
+	<script type="text/javascript" src="util/popup/app-component.js"></script>
+	<script type="text/javascript" src="util/utilModule.js"></script>
+
 	<script type="text/javascript" src="js/appModule.js"></script>
+	<script type="text/javascript" src="views/login/loginModule.js"></script>
 	<script type="text/javascript" src="views/register/registrationModule.js"></script>
 </body>
 </html>

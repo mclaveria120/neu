@@ -24,9 +24,9 @@ exports.signUp = function(req, res) {
 
 			userServices.addUser(user, function(err) {
 			    if (err) {
-			    	res.status(500).jsonp({ 'error': true, 'message': 'Error adding user .. !' });
+			    	res.status(500).jsonp({ 'error': true, 'message': 'Error adding user' });
 			    } else {
-					res.status(200).jsonp({ 'error': false, 'message': 'User created .. !' });
+					res.status(200).jsonp({ 'error': false, 'message': 'User created' });
 			    }
 			 });
 	}
@@ -42,7 +42,7 @@ exports.logIn = function(req, res) {
 
 		userServices.logIn(user, function(isError,result) {
 		    if (isError) {
-		    	res.status(500).jsonp({ 'error': true, 'message': 'Wrong passowrd or email .. !' });
+		    	res.status(500).jsonp({ 'error': true, 'message': 'Wrong passowrd or email' });
 		    } else {
 		    	res.status(201).jsonp({
      				 id_token: createToken(result)

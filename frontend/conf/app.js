@@ -3,6 +3,8 @@
  */
 'use strict';
  angular.module("registrationModule",[]);
+ angular.module("loginModule",[]);
+ angular.module("utilModule", []);
 
 
  angular
@@ -16,6 +18,8 @@ angular.module("app",
 			['appCoreModule',
 		
 			'registrationModule',
+			'loginModule',
+			'utilModule'
 		]);
 
 
