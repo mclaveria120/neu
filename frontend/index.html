@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Neu</title>
+
+<script src="lib/angular.js"></script>
+<script src="lib/angular-route.js"></script>
+<script src="lib/angular-cookies.js"></script>
+<script src="lib/angular-sanitize.js"></script>
+
+<script src="lib/jquery-3.1.1.js"></script>
+
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/ui-bootstrap-tpls-2.3.0.js"></script>
+ 
+<link rel="stylesheet" href="lib/bootstrap.min.css">
+
+</head>
+<body>
+	<nav class="navbar navbar-default" ng-controller="applicationContoller" ng-init="init()">
+		<div class="container-fluid">
+			<div id="guest">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#login"></i>Login</a></li>
+					<li><a href="#registration">Register</a></li>
+				</ul>
+			</div>
+			<div id="logout">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a ng-click="logout()"></i>Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<div class="col-xs-offset-2 col-xs-8">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Conf -->
+	<script type="text/javascript" src="conf/app.js"></script><!--Registration Module -->
+	<script type="text/javascript" src="conf/app-router.js"></script><!--Navigation and APP LEVEL config Module -->
+	<script type="text/javascript" src="conf/app-const.js"></script><!--Application Const. -->
+	
+	<script type="text/javascript" src="js/appModule.js"></script>
+	<script type="text/javascript" src="views/register/registrationModule.js"></script>
+</body>
+</html>

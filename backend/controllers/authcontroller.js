@@ -26,7 +26,7 @@ exports.signUp = function(req, res) {
 			    if (err) {
 			    	res.status(500).jsonp({ 'error': true, 'message': 'Error adding user .. !' });
 			    } else {
-					res.status(500).jsonp({ 'error': false, 'message': 'User created .. !' });
+					res.status(200).jsonp({ 'error': false, 'message': 'User created .. !' });
 			    }
 			 });
 	}

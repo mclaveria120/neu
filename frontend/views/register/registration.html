@@ -1,0 +1,46 @@
+<div class='container'>
+	<div class='panel panel-primary dialog-panel'>
+		<div class='panel-heading'><h5>Registration</h5></div>
+		<div class='panel-body'>
+			<form class='form-horizontal' name='registrationForm'>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>Email</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_email' placeholder='Email' ng-model="regCtrl.registration.email"  type='email' ng-required="true">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2' for='id_password'>Password</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_password' placeholder='Password' ng-model="regCtrl.registration.password" type='password' ng-required="true">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2' for='id_repeat_password'>Repeat Password</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_repeat_password' placeholder='Password' ng-model="regCtrl.registration.repeat_password" type='password' ng-required="true">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='form-group'>
+					<div class='col-md-offset-4 col-md-3'>
+						<button class='btn btn-primary' ng-click="registrationForm.$valid && regCtrl.register()" type='submit'>Register</button>
+						<button class='btn btn-danger' ng-click="regCtrl.cancel()" style='float: right'  type='button'>Cancel</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
