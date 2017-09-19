@@ -10,19 +10,15 @@ function createUser(result){
 }
 
 exports.addUser=function(user,callback){
-
-	
-	var encryptedPassword = bcrypt.hashSync(user.password, bcrypt.genSaltSync());
-    var insertQuery= "INSERT INTO user (`email`, `password`) VALUES ('" + user.email + "', '" + encryptedPassword + "');";
-
 	db.query('SELECT * FROM user WHERE email = ?', user.email,function(error, result, field) {
-			console.log(result);
-		   if(error || result.length!=0) {
-		   		callback(true,error); //No error
+			if(error || result.length!=0) {
+		   		callback(true,error); 
     		}else{
+				var encryptedPassword = bcrypt.hashSync(user.password, bcrypt.genSaltSync());
+				var insertQuery= "INSERT INTO user (`email`, `password`) VALUES ( ?, ?)";
 
-		        db.query(insertQuery, function(err) {
-				   	callback(err);
+	        	db.query(insertQuery,[user.email,encryptedPassword], function(err) {
+		           	callback(err);
 				});
     		}
 	});

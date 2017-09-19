@@ -5,7 +5,7 @@ var jwt				  = require("jsonwebtoken");
 var authController    = require('./controllers/authcontroller');
 var counterController = require('./controllers/countercontroller');
 var jwt 		      = require('jsonwebtoken');
-var passport = require('passport');
+var passport          = require('passport');
 
 
 /**
@@ -27,8 +27,8 @@ module.exports.setup = function (app) {
  	
  
  	api.route('/count')
- 					  .post(passport.authenticate('jwt', { session: false }),counterController.increaseCounter)
-					  .get(passport.authenticate('jwt', { session: false }),counterController.getTotalCounters);
+ 					  .post(passport.authenticate('jwt'),counterController.increaseCounter)
+					  .get(passport.authenticate('jwt'),counterController.getTotalCounters);
 
 	app.use('/api', api);
 	
