@@ -35,8 +35,7 @@ loginModule.factory('loginService', function($rootScope,$http,$timeout,$cookieSt
 	var loginService = {};
 		
 	loginService.login = function (data, onSuccess,onError) {
-		console.log(data);
-        $http.post(APP_CONSTANT.REMOTE_HOST+'/login',data)
+	    $http.post(APP_CONSTANT.REMOTE_HOST+'/login',data)
         		.success(function (data, status, headers, config) {
 					onSuccess(data,headers);
 				})
@@ -46,12 +45,15 @@ loginModule.factory('loginService', function($rootScope,$http,$timeout,$cookieSt
 	};
 		
     loginService.setCredentials = function (data,headers) {
+    			
 		         $rootScope.globals = {		userSession: {
 							                    email: data.email,
 							                    id_token: data.id_token,
+							                    counter:data.counter
 							                }
 		         						};
 		   	     $cookieStore.put('globals', $rootScope.globals);
+		   	     	
     };
 
 	return loginService;

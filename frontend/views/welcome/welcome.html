@@ -1,0 +1,22 @@
+<div class="container" ng-init="" >
+	<div class="row" style="margin-bottom:30px"  ng-init="init()">
+        <div  >
+    		<h2 style="text-align: left;">Welcome: {{userEmail}}</h2>
+          
+                   <div style="float: right;">
+						<button class="btn btn-success" type="button" 
+                                ng-click="increaseCounter()"
+                                ng-disabled="disabledCounterButton">Increase Counter</button>
+                    </div>
+          
+        </div>
+        <div style="text-align: center;" >
+    		<div>
+                <div class="alert alert-info">
+    				<h2 >Total Counters</h2><strong><p>{{counters}}</p></strong>
+  				</div>
+            </div>
+        </div>
+
+	</div>
+</div>

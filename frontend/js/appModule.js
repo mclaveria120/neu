@@ -1,6 +1,6 @@
 var configModule = angular.module('app');
 
-configModule.controller("applicationContoller", function($rootScope,$scope,$window,$location,AUTH_EVENTS) {
+configModule.controller("applicationContoller", function($rootScope,$scope,$window,$location,AUTH_EVENTS,utilService) {
 
 
 	$rootScope.userSession;
@@ -31,6 +31,11 @@ configModule.controller("applicationContoller", function($rootScope,$scope,$wind
      $scope.getPath=function(){
     	 return $location.$$path; 
      }
+       $scope.logout = function () {
+       //should be calling the backend
+                    utilService.clearCredentials();
+                     $location.path('/login');
+    };
 });
 
 

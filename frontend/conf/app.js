@@ -5,7 +5,7 @@
  angular.module("registrationModule",[]);
  angular.module("loginModule",[]);
  angular.module("utilModule", []);
-
+ angular.module("welcomeModule", []);
 
  angular
  .module('appCoreModule', [
@@ -19,6 +19,7 @@ angular.module("app",
 		
 			'registrationModule',
 			'loginModule',
+			'welcomeModule',
 			'utilModule'
 		]);
 
