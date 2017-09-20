@@ -70,7 +70,7 @@
 		{
 			"name": "count",
 			"request": {
-				"url": "localhost:3000/api/count",
+				"url": "localhost:3000/api/counters",
 				"method": "GET",
 				"header": [
 					{

@@ -5,7 +5,9 @@ var bcrypt	= require('bcrypt');
 function createUser(result){
 	return  {
 			   id: result.id,
-			   email: result.email
+			   email: result.email,
+			   counter:result.counter
+
 			};
 }
 

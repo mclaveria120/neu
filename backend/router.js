@@ -26,9 +26,10 @@ module.exports.setup = function (app) {
 	require('./configs/passport')(passport);
  	
  
- 	api.route('/count')
- 					  .post(passport.authenticate('jwt'),counterController.increaseCounter)
-					  .get(passport.authenticate('jwt'),counterController.getTotalCounters);
+ 	api.route('/count').post(passport.authenticate('jwt'),counterController.increaseCounter)
+					 
+	api.route('/counters').get(passport.authenticate('jwt'),counterController.getTotalCounters);
+
 
 	app.use('/api', api);
 	

@@ -45,7 +45,9 @@ exports.logIn = function(req, res) {
 		    	res.status(500).jsonp({ 'error': true, 'message': 'Wrong passowrd or email' });
 		    } else {
 		    	res.status(201).jsonp({
-     				 id_token: createToken(result)
+     				 id_token: createToken(result),
+     				 counter:result.counter,
+     				 email:result.email
     			});
 		    }
 		 });
