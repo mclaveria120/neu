@@ -15,8 +15,7 @@ function createToken(user) {
 
 
 exports.signUp = function(req, res) {
-
-	if(!req.body.email || !req.body.password) {
+	if(!req.body.email || !req.body.password || req.body.password!=req.body.repeat_password) {
 		res.status(400).jsonp({ success: false, message: 'Invalid email or password.' });
 	} else {
 		
@@ -33,7 +32,6 @@ exports.signUp = function(req, res) {
 };
 
 exports.logIn = function(req, res) {
-
 	if(!req.body.email || !req.body.password) {
 		res.status(500).jsonp({ success: false, message: 'Invalid email or password.' });
 	} else {

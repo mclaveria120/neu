@@ -25,7 +25,12 @@ registrationModule.controller('registrationController', function($location, $sco
 	};
 	
 	regCtrl.register = function() {
-		registrationService.register(regCtrl.registration, onSuccess, onError);
+		if(regCtrl.registration.password!=regCtrl.registration.repeat_password){
+			utilService.showModal('Invalid passoword');
+		}else{
+			registrationService.register(regCtrl.registration, onSuccess, onError);		
+		}
+		
 	}
 
 });

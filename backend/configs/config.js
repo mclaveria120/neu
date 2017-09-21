@@ -9,7 +9,7 @@ exports.conf = {
     mysql:{
 		  host     : 'localhost',
 		  user     : 'root',
-		  password : '',
+		  password : 'root',
 		  database : 'mydb'
    }
 };
