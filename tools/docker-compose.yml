@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    angular:
+      container_name: frontend
+      image: frontend-image
+      build: ../frontend
+      ports:
+        - "80:80"
+      
+
