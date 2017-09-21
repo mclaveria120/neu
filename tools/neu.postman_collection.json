@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "neurala",
+		"name": "neu",
 		"_postman_id": "84ab267c-97c3-8a9f-c9de-f255b58e58a5",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -41,7 +41,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n  \"email\": \"ggpy@v.com\",\n  \"password\": \"v\"\n  }"
+					"raw": "{ \n  \"email\": \"t@k.com\",\n  \"password\": \"k\",\n  \"repeat_password\": \"k\"\n  }\n  \n"
 				},
 				"description": ""
 			},
@@ -57,11 +57,16 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzAsImVtYWlsIjoidUBrLmNvbSIsImlhdCI6MTUwNTc3ODk2MCwiZXhwIjoxNTA1Nzg5MDQwfQ.5PiJcLvykxMbU5doDZxQXVEsF1vytxSBx-3sDG5V1bI",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n  \"email\": \"ggpy@v.com\"\n}"
+					"raw": "{ \n  \"email\": \"u@v.com\"\n}"
 				},
 				"description": ""
 			},
@@ -70,7 +75,7 @@
 		{
 			"name": "count",
 			"request": {
-				"url": "localhost:3000/api/counters",
+				"url": "localhost:3000/api/count",
 				"method": "GET",
 				"header": [
 					{
